@@ -37,5 +37,8 @@ while (restartGame){
        rangeNum = parseInt(rangeNum);
    }
 
+   // Creates the random number (AKA Number to be guessed by the user) using the range number entered by the user
+   randomNum = Math.floor(Math.random() * rangeNum) + 1;
+
     break;
 }
