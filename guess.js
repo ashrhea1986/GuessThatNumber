@@ -71,7 +71,7 @@ while (restartGame){
 
     // Checks if user has any attempts left. If not, then the game ends and the number is displayed to the user.
     } else if (attempts === 0){
-        alert(`Sorry, but you have run out of attempts :(. The number was ${randomNum}`);
+        alert(`Sorry, but you have run out of attempts :( The number was ${randomNum}`);
         break;
 
         // Checks if user's guess was too low and prompts user to guess again if that is the case
@@ -84,5 +84,26 @@ while (restartGame){
     }
    }
 
-    break;
-}
+   // Prompts user with option to play again
+   playAgain = prompt(`Would you like to play again? Y for yes. N for no.`);
+
+   // Loop continues until user submits a valid response
+   while (true){
+    // Checks is user's response is No (AKA "N")
+    if(playAgain === "N") {
+        // Alerts user that game is over and game/loop does not restart.
+        alert("Thanks for playing!")
+        restartGame = false;
+        break;
+  
+        // Checks if the user's response is YES (AKA "Y" or "y")
+      } else if (playAgain.toUpperCase() === "Y") {
+        // The game restarts
+        break;
+  
+        // Prompts the user to enter a valid response and start this loop again
+      } else {
+        playAgain = prompt(`Please enter Y or N`);
+      }
+    }
+  }
